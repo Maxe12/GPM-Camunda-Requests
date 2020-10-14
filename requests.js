@@ -9,7 +9,7 @@ $(() => {
             url: url,
             type: "POST",
             data: data,
-            dataType: "json",
+            dataType: "jsonp",
             success: (response => {
                 console.log(response)
             }),
