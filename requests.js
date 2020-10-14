@@ -1,8 +1,22 @@
 $(() => {
     console.log('Ready!');
+    const url = "localhost:8080/engine-rest/message";
 
     $('#sendCustomerData').on('click', () => {
         console.log('Handle Customer Data');
+        const data = {message: "receivedCostumerInformation"};
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: (response => {
+                console.log(response)
+            }),
+            error: (error) => {
+                console.log(error);
+            }
+        })
     })
 
     $('#sendPayWithPayPal').on('click', () => {
